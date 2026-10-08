@@ -273,6 +273,21 @@ body {
     font-weight: 500;
 }
 
+.badge-demo {
+    background-color: #0f766e;
+    color: #ffffff;
+    padding: 8px 16px;
+    border-radius: 20px;
+    font-size: 13.5px;
+    font-weight: 600;
+    display: inline-block;
+    cursor: pointer;
+}
+
+.badge-demo:hover {
+    background-color: #115e59;
+}
+
 /* Form Demo Styles */
 .demo-form label {
     display: inline-block;
