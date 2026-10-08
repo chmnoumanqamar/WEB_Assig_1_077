@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lecture 4: Semantic HTML5, Layout & Forms</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <div class="container">
+        <main class="content-area">
+            <!-- Header Section -->
+            <h1 class="lecture-title">Lecture 4: Semantic HTML5, Layout &amp; Forms</h1>
+            <p class="lecture-subtitle">Semantic Elements, SEO, Accessibility, Web Storage &amp; Client Validation</p>
+            <hr class="divider">
+
+            <!-- Summary Section -->
+            <h2 class="section-title">Summary</h2>
+            <p class="section-text">
+                This lecture transitions from basic markup to modern HTML5 semantic architecture and user data capture. It examines document flow, differentiating block-level versus inline elements, and explores the modern semantic tags that replace outdated table layouts. Students study the significant advantages of semantic markup for Search Engine Optimization (SEO) and web accessibility. The lecture also highlights HTML5 features like the &lt;canvas&gt; API and Web Storage (localStorage vs. sessionStorage), followed by an extensive breakdown of interactive forms, controls, input types, and robust client-side validation rules.
+            </p>
+
+            <!-- Topics Covered Section -->
+            <h2 class="section-title">Topics Covered:</h2>
+            <ul class="topics-list">
+                <li>Page Layout, Flow &amp; Content Models
+                    <ul class="sub-topics-list">
+                        <li><strong>Display Flow:</strong> Block-level elements (take full width, begin on new line) vs. Inline elements (occupy only required space)</li>
+                        <li><strong>Generic Containers:</strong> &lt;div&gt; (block wrapper) and &lt;span&gt; (inline wrapper)</li>
+                        <li><strong>HTML Content Models:</strong> Flow, phrasing, sectioning, heading, embedded, interactive, and metadata models</li>
+                    </ul>
+                </li>
+                <li>Semantic HTML5 &amp; Structural Architecture
+                    <ul class="sub-topics-list">
+                        <li><strong>Semantic Layout Tags:</strong> &lt;header&gt;, &lt;nav&gt;, &lt;main&gt;, &lt;section&gt;, &lt;article&gt;, &lt;aside&gt;, &lt;footer&gt;, &lt;figure&gt;, and &lt;figcaption&gt;</li>
+                        <li><strong>SEO &amp; Accessibility:</strong> Enabling search engine scrapers, screen readers (ARIA integration), and machine-readable page outlines</li>
+                    </ul>
+                </li>
+                <li>HTML5 New Features &amp; Web Storage
+                    <ul class="sub-topics-list">
+                        <li><strong>Graphics:</strong> &lt;canvas&gt; API for programmatic 2D/3D dynamic rendering</li>
+                        <li><strong>Client Storage:</strong> localStorage (persistent key-value storage) vs. sessionStorage (tab-scoped lifecycle)</li>
+                        <li><strong>HTML4 vs. HTML5:</strong> Simplified doctype, audio/video native support, form validation, and cleaner syntax</li>
+                    </ul>
+                </li>
+                <li>Forms &amp; Input Controls
+                    <ul class="sub-topics-list">
+                        <li><strong>Form Tag Attributes:</strong> &lt;form action="url" method="GET|POST" target="_blank"&gt;</li>
+                        <li><strong>Form Controls:</strong> &lt;label&gt;, &lt;input&gt;, &lt;select&gt; (dropdowns), &lt;textarea&gt;, &lt;button&gt;, &lt;fieldset&gt;, and &lt;legend&gt;</li>
+                        <li><strong>Diverse Input Types:</strong> text, email, password, number, date, checkbox, radio, file, and color</li>
+                        <li><strong>Input Attributes:</strong> placeholder, name, value, readonly, disabled, autocomplete, autofocus, and multiple</li>
+                    </ul>
+                </li>
+                <li>Client-Side Validation &amp; Security Considerations
+                    <ul class="sub-topics-list">
+                        <li><strong>Built-in Constraint Validation:</strong> required, pattern (regular expressions), min, max, and step</li>
+                        <li><strong>Client vs. Server Validation:</strong> Client-side validation improves user experience and response speed, but server-side validation is non-negotiable for security and data integrity</li>
+                    </ul>
+                </li>
+            </ul>
+
+            <!-- Example Code Section -->
+            <h2 class="section-title">Example Code:</h2>
+            <div class="code-box">
+                <pre>&lt;!-- Semantic Form with Built-in Client Validation --&gt;
+&lt;form action="/submit" method="POST"&gt;
+    &lt;fieldset style="border: 1px solid #0f766e; border-radius: 6px; padding: 14px;"&gt;
+        &lt;legend style="color: #0f766e; font-weight: bold;"&gt;User Registration&lt;/legend&gt;
+        
+        &lt;label for="username"&gt;Full Name:&lt;/label&gt;&lt;br&gt;
+        &lt;input type="text" id="username" name="name" placeholder="Muhammad Nouman" required&gt;&lt;br&gt;&lt;br&gt;
+        
+        &lt;label for="useremail"&gt;Email Address:&lt;/label&gt;&lt;br&gt;
+        &lt;input type="email" id="useremail" name="email" placeholder="student@example.com" required&gt;&lt;br&gt;&lt;br&gt;
+        
+        &lt;button type="submit"&gt;Register Now&lt;/button&gt;
+    &lt;/fieldset&gt;
+&lt;/form&gt;</pre>
+            </div>
+
+            <!-- Output Section -->
+            <h2 class="section-title">Output:</h2>
+            <div class="output-box">
+                <form action="#" method="GET" class="demo-form" onsubmit="event.preventDefault(); alert('Validation Passed! Form data ready for transmission.');">
+                    <fieldset style="border: 1px solid #d1e2e0; border-radius: 6px; padding: 14px; background-color: #f7faf9;">
+                        <legend style="color: #0f766e; font-weight: 700; padding: 0 6px;">User Registration</legend>
+                        <div style="margin-bottom: 10px;">
+                            <label for="reg-name">Full Name:</label>
+                            <input type="text" id="reg-name" placeholder="Muhammad Nouman" required>
+                        </div>
+                        <div style="margin-bottom: 12px;">
+                            <label for="reg-email">Email Address:</label>
+                            <input type="email" id="reg-email" placeholder="student@example.com" required>
+                        </div>
+                        <button type="submit" class="demo-btn">Register Now</button>
+                    </fieldset>
+                </form>
+            </div>
+
+            <hr class="divider">
+
+            <!-- Bottom Navigation -->
+            <footer class="nav-footer">
+                <a href="index.html">Home</a> | <a href="lecture3.html">Previous Lecture</a> | <a href="lecture5.html">Next Lecture</a>
+            </footer>
+        </main>
+    </div>
+
+</body>
+</html>

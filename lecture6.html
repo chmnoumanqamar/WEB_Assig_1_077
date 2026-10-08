@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lecture 6: CSS Box Model, Display & Styling</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <div class="container">
+        <main class="content-area">
+            <!-- Header Section -->
+            <h1 class="lecture-title">Lecture 6: CSS Box Model, Display &amp; Styling</h1>
+            <p class="lecture-subtitle">Box Model Layers, Box-Sizing, Collapsing Margins, Dimensions &amp; Display</p>
+            <hr class="divider">
+
+            <!-- Summary Section -->
+            <h2 class="section-title">Summary</h2>
+            <p class="section-text">
+                This lecture delivers an in-depth examination of the CSS Box Model, which dictates how every HTML element is sized, spaced, and rendered by browser layout engines. It analyzes the four concentric layers: Content, Padding, Border, and Margin, alongside the directional TRBL (Top-Right-Bottom-Left) shorthand notation. Students explore the critical difference between the default content-box and modern border-box sizing paradigms, margin collapsing phenomena and their mitigations, overflow constraints, display property behaviors (block, inline, inline-block, none vs. visibility), curved borders, drop shadows, and consistent spacing architectures powered by CSS custom properties.
+            </p>
+
+            <!-- Topics Covered Section -->
+            <h2 class="section-title">Topics Covered:</h2>
+            <ul class="topics-list">
+                <li>CSS Box Model Layers &amp; Notation
+                    <ul class="sub-topics-list">
+                        <li><strong>Concentric Layers:</strong> Content area, Padding (internal clearance), Border, and Margin (external spacing)</li>
+                        <li><strong>TRBL Clockwise Rules:</strong> Shorthand properties accepting 1, 2, 3, or 4 values (Top, Right, Bottom, Left)</li>
+                    </ul>
+                </li>
+                <li>Box-Sizing Paradigm &amp; Layout Calculation
+                    <ul class="sub-topics-list">
+                        <li><strong>content-box (W3C Default):</strong> Width and height apply only to content; padding and border add to the total rendered dimensions</li>
+                        <li><strong>border-box (Modern Standard):</strong> Total width and height include padding and borders, eliminating unpredictable layout wrapping</li>
+                    </ul>
+                </li>
+                <li>Margin Collapsing &amp; Prevention
+                    <ul class="sub-topics-list">
+                        <li><strong>Collapsing Mechanics:</strong> Vertical margins of adjacent sibling block elements combine into a single margin equal to the largest value</li>
+                        <li><strong>Parent-Child Collapsing:</strong> Margins escaping unpadded containers</li>
+                        <li><strong>Prevention Techniques:</strong> Adding internal padding, border boundaries, or clearfix/overflow styling</li>
+                    </ul>
+                </li>
+                <li>Dimensions, Constraints &amp; Overflow
+                    <ul class="sub-topics-list">
+                        <li><strong>Dimension Controls:</strong> width, height, min-width, max-width, min-height, and max-height for fluid responsive bounds</li>
+                        <li><strong>Overflow Management:</strong> Handling overflowing content via overflow: visible, hidden, scroll, and auto</li>
+                    </ul>
+                </li>
+                <li>Display Property &amp; Box Visual Styling
+                    <ul class="sub-topics-list">
+                        <li><strong>Display Modes:</strong> block (breaks line, accepts dimensions), inline (flows within text, ignores vertical dimensions), inline-block (flows horizontally but respects full box model)</li>
+                        <li><strong>Hiding Elements:</strong> display: none (removes element from document flow) vs. visibility: hidden (invisible but preserves allocated geometry)</li>
+                        <li><strong>Visual Refinement:</strong> border styling, border-radius (curved corners, circular avatars), and multi-layer box-shadow</li>
+                        <li><strong>Spacing Systems:</strong> CSS custom properties (variables) like --spacing-sm, --spacing-md for scalable design systems</li>
+                    </ul>
+                </li>
+            </ul>
+
+            <!-- Example Code Section -->
+            <h2 class="section-title">Example Code:</h2>
+            <div class="code-box">
+                <pre>&lt;!-- CSS Box Model with border-box and Box-Shadow --&gt;
+&lt;div style="box-sizing: border-box; 
+            width: 100%; 
+            padding: 16px 20px; 
+            margin: 10px 0; 
+            border: 2px solid #0f766e; 
+            border-radius: 8px; 
+            background-color: #f0fdfa; 
+            box-shadow: 0 4px 12px rgba(15, 118, 110, 0.12);"&gt;
+    &lt;strong style="color: #0f766e;"&gt;Box Model Component&lt;/strong&gt;
+    &lt;p style="margin-top: 6px;"&gt;Content + 16px Padding + 2px Border + 10px Margin.&lt;/p&gt;
+&lt;/div&gt;</pre>
+            </div>
+
+            <!-- Output Section -->
+            <h2 class="section-title">Output:</h2>
+            <div class="output-box">
+                <div style="box-sizing: border-box; width: 100%; padding: 16px 20px; border: 2px solid #0f766e; border-radius: 8px; background-color: #f0fdfa; box-shadow: 0 4px 12px rgba(15, 118, 110, 0.12);">
+                    <strong style="color: #0f766e; font-size: 15px;">Box Model Component</strong>
+                    <p style="font-size: 13.5px; color: #334155; margin-top: 6px;">
+                        Demonstrating <code>box-sizing: border-box</code>, 16px internal padding, 2px emerald border, 8px curved corners, and soft drop shadow.
+                    </p>
+                </div>
+            </div>
+
+            <hr class="divider">
+
+            <!-- Bottom Navigation -->
+            <footer class="nav-footer">
+                <a href="index.html">Home</a> | <a href="lecture5.html">Previous Lecture</a> | <a href="lecture7.html">Next Lecture</a>
+            </footer>
+        </main>
+    </div>
+
+</body>
+</html>

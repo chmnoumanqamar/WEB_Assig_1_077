@@ -1,0 +1,318 @@
+/* ==========================================================
+   Web Technologies - Assignment 1 Stylesheet
+   Theme: Emerald Teal (Professional, Modern & Academic)
+   Student: Muhammad Nouman Qamar | FA24-BSE-077
+   ========================================================== */
+
+@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap');
+
+/* Universal Reset & Box Sizing */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+/* Page Background and Body Typography */
+body {
+    font-family: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    background-color: #f2f7f7;
+    color: #1e293b;
+    line-height: 1.65;
+    padding: 24px 12px;
+    -webkit-font-smoothing: antialiased;
+}
+
+/* Main Container Card (Centered layout like Figure 1) */
+.container {
+    max-width: 780px;
+    margin: 20px auto;
+    background-color: #ffffff;
+    border: 1px solid #d1e2e0;
+    border-radius: 12px;
+    box-shadow: 0 10px 30px -5px rgba(15, 118, 110, 0.08), 0 4px 12px -2px rgba(0, 0, 0, 0.04);
+    overflow: hidden;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+/* Header Banner on Homepage */
+.header-banner {
+    background: linear-gradient(135deg, #0f766e 0%, #115e59 55%, #134e4a 100%);
+    color: #ffffff;
+    text-align: center;
+    padding: 28px 24px;
+    border-bottom: 3px solid #0d9488;
+    position: relative;
+}
+
+.header-banner h1 {
+    font-size: 28px;
+    font-weight: 700;
+    letter-spacing: 0.5px;
+    margin-bottom: 6px;
+    text-shadow: 0 1px 2px rgba(0, 0, 0, 0.15);
+}
+
+.header-banner .student-info {
+    font-size: 15px;
+    color: #ccfbf1;
+    font-weight: 500;
+    letter-spacing: 0.3px;
+}
+
+/* Inner Page Content Area */
+.content-area {
+    padding: 28px 36px 32px 36px;
+}
+
+/* Styled Table for Lectures List */
+.lecture-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 18px 0 26px 0;
+    font-size: 14px;
+    border-radius: 8px;
+    overflow: hidden;
+}
+
+.lecture-table th {
+    background: linear-gradient(135deg, #0f766e 0%, #115e59 100%);
+    color: #ffffff;
+    font-weight: 600;
+    text-align: left;
+    padding: 13px 16px;
+    border: 1px solid #0d635c;
+    letter-spacing: 0.3px;
+}
+
+.lecture-table td {
+    padding: 11px 16px;
+    border: 1px solid #e2e8f0;
+    color: #334155;
+    transition: background-color 0.15s ease;
+}
+
+/* Table Row Alternating Colors (Zebra Striping) */
+.lecture-table tbody tr:nth-child(even) {
+    background-color: #f7faf9;
+}
+
+.lecture-table tbody tr:nth-child(odd) {
+    background-color: #ffffff;
+}
+
+.lecture-table tbody tr:hover {
+    background-color: #e6f6f4;
+}
+
+/* Table Link Styling */
+.table-link {
+    color: #0f766e;
+    text-decoration: none;
+    font-weight: 600;
+    display: inline-block;
+    padding: 4px 10px;
+    border-radius: 4px;
+    background-color: #e6f6f4;
+    transition: all 0.2s ease;
+}
+
+.table-link:hover {
+    background-color: #0f766e;
+    color: #ffffff;
+}
+
+/* Lecture Pages Heading Styling */
+.lecture-title {
+    color: #0f766e;
+    text-align: center;
+    font-size: 23px;
+    font-weight: 700;
+    margin-top: 5px;
+    margin-bottom: 6px;
+}
+
+.lecture-subtitle {
+    text-align: center;
+    font-style: italic;
+    color: #64748b;
+    font-size: 13.5px;
+    margin-bottom: 16px;
+}
+
+/* Horizontal Dividers */
+.divider {
+    border: none;
+    height: 1px;
+    background: linear-gradient(to right, transparent, #ccfbf1, #99f6e4, #ccfbf1, transparent);
+    margin: 16px 0 22px 0;
+}
+
+/* Lecture Detail Content Headings */
+.section-title {
+    font-size: 16px;
+    font-weight: 700;
+    color: #0f766e;
+    margin-top: 20px;
+    margin-bottom: 9px;
+}
+
+.section-text {
+    font-size: 14px;
+    color: #334155;
+    margin-bottom: 15px;
+    text-align: justify;
+    line-height: 1.7;
+}
+
+/* Nested Topics List */
+.topics-list {
+    margin-left: 20px;
+    margin-bottom: 20px;
+    font-size: 14px;
+    color: #334155;
+}
+
+.topics-list > li {
+    margin-bottom: 9px;
+    font-weight: 600;
+    color: #1e293b;
+}
+
+.sub-topics-list {
+    margin-left: 20px;
+    margin-top: 5px;
+    list-style-type: square;
+    font-weight: normal;
+}
+
+.sub-topics-list li {
+    margin-bottom: 4px;
+    color: #475569;
+}
+
+/* Code Display Box (Modern Dark Theme) */
+.code-box {
+    background-color: #1e293b;
+    border: 1px solid #334155;
+    border-radius: 6px;
+    padding: 14px 18px;
+    margin-bottom: 18px;
+    overflow-x: auto;
+    box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.15);
+}
+
+.code-box pre {
+    font-family: 'JetBrains Mono', 'Consolas', 'Courier New', monospace;
+    font-size: 13px;
+    color: #e2e8f0;
+    line-height: 1.5;
+}
+
+/* Output Demonstration Box */
+.output-box {
+    background-color: #ffffff;
+    border: 1px solid #d1e2e0;
+    border-left: 4px solid #0f766e;
+    border-radius: 6px;
+    padding: 16px 20px;
+    margin-bottom: 22px;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.03);
+}
+
+/* Bottom Navigation Links */
+.nav-footer {
+    text-align: center;
+    padding-top: 14px;
+    font-size: 14px;
+    color: #94a3b8;
+}
+
+.nav-footer a {
+    color: #0f766e;
+    text-decoration: none;
+    font-weight: 600;
+    margin: 0 6px;
+    padding: 3px 8px;
+    border-radius: 4px;
+    transition: all 0.2s ease;
+}
+
+.nav-footer a:hover {
+    color: #0d9488;
+    background-color: #f0fdfa;
+    text-decoration: underline;
+}
+
+/* Interactive demo elements on lecture pages */
+.demo-btn {
+    background: linear-gradient(135deg, #0f766e, #0d9488);
+    color: #ffffff;
+    border: none;
+    padding: 9px 18px;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 14px;
+    font-weight: 600;
+    box-shadow: 0 2px 4px rgba(15, 118, 110, 0.25);
+    transition: all 0.2s ease;
+}
+
+.demo-btn:hover {
+    background: linear-gradient(135deg, #115e59, #0f766e);
+    box-shadow: 0 4px 8px rgba(15, 118, 110, 0.35);
+    transform: translateY(-1px);
+}
+
+.demo-box {
+    border: 2px dashed #0d9488;
+    background-color: #f0fdfa;
+    padding: 15px;
+    border-radius: 6px;
+    color: #0f766e;
+    font-weight: 500;
+}
+
+/* Form Demo Styles */
+.demo-form label {
+    display: inline-block;
+    width: 100px;
+    font-weight: 600;
+    font-size: 13.5px;
+    margin-bottom: 6px;
+    color: #334155;
+}
+
+.demo-form input[type="text"],
+.demo-form input[type="email"] {
+    padding: 8px 12px;
+    border: 1px solid #cbd5e1;
+    border-radius: 6px;
+    font-size: 13px;
+    width: 220px;
+    transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.demo-form input[type="text"]:focus,
+.demo-form input[type="email"]:focus {
+    border-color: #0f766e;
+    outline: none;
+    box-shadow: 0 0 0 3px rgba(15, 118, 110, 0.15);
+}
+
+/* Responsive adjustments for mobile screens */
+@media (max-width: 600px) {
+    .content-area {
+        padding: 18px 16px;
+    }
+    .header-banner h1 {
+        font-size: 22px;
+    }
+    .lecture-title {
+        font-size: 18px;
+    }
+    .lecture-table th, .lecture-table td {
+        padding: 9px 10px;
+        font-size: 12.5px;
+    }
+}

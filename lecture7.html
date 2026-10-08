@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lecture 7: Normal Document Flow, CSS Positioning, z-index & Floats</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <div class="container">
+        <main class="content-area">
+            <!-- Header Section -->
+            <h1 class="lecture-title">Lecture 7: Normal Flow, CSS Positioning, z-index &amp; Floats</h1>
+            <p class="lecture-subtitle">Document Flow, Positioning Schemes, Stacking Contexts &amp; Float Clearing</p>
+            <hr class="divider">
+
+            <!-- Summary Section -->
+            <h2 class="section-title">Summary</h2>
+            <p class="section-text">
+                This lecture explores how browsers calculate spatial geometry and layering for web elements. It begins with the fundamental Normal Document Flow governing block and inline elements. Students study all five CSS positioning schemes (static, relative, absolute, fixed, and sticky), along with the containing block concept and the modern inset shorthand. The lecture then decodes 3D plane layering via z-index and Stacking Context triggers, explaining how to diagnose and prevent parent stacking traps. Finally, it analyzes legacy CSS floats, parent container height collapse, and robust clearfix solutions.
+            </p>
+
+            <!-- Topics Covered Section -->
+            <h2 class="section-title">Topics Covered:</h2>
+            <ul class="topics-list">
+                <li>Normal Document Flow
+                    <ul class="sub-topics-list">
+                        <li><strong>Default Browser Flow:</strong> Elements render top-to-bottom and left-to-right following source HTML order</li>
+                        <li><strong>Block vs. Inline Flow:</strong> Block elements stack vertically on fresh lines; inline elements share horizontal line boxes</li>
+                        <li><strong>Flow Adaptability:</strong> Surrounding sibling elements automatically reflow and adapt when content dimensions expand</li>
+                    </ul>
+                </li>
+                <li>Static Positioning &amp; Offsets
+                    <ul class="sub-topics-list">
+                        <li><strong>position: static:</strong> Default positioning state of all HTML elements</li>
+                        <li><strong>Offset Behavior:</strong> Directional offsets (top, bottom, left, right) and z-index are completely ignored on static elements</li>
+                    </ul>
+                </li>
+                <li>CSS Positioning Modes &amp; Offsets
+                    <ul class="sub-topics-list">
+                        <li><strong>Relative (position: relative):</strong> Element remains in normal document flow; offsets shift it visually from its original spot without altering sibling layouts</li>
+                        <li><strong>Absolute (position: absolute):</strong> Element is removed completely from normal flow; offsets anchor to the nearest positioned ancestor (Containing Block)</li>
+                        <li><strong>The Containing Block:</strong> Establishing parent context with position: relative to anchor absolute child elements (e.g. notification badges, tooltips)</li>
+                        <li><strong>Modern Inset Shorthand:</strong> inset: 0 (replaces top: 0; right: 0; bottom: 0; left: 0)</li>
+                        <li><strong>Fixed (position: fixed):</strong> Anchored directly to the viewport; stays locked during scroll; considerations for mobile screen space</li>
+                        <li><strong>Sticky (position: sticky):</strong> Hybrid behavior that scrolls in normal flow until hitting a designated scroll threshold (e.g. top: 0), then sticks within its parent container</li>
+                    </ul>
+                </li>
+                <li>z-index &amp; Stacking Contexts
+                    <ul class="sub-topics-list">
+                        <li><strong>z-index Mechanics:</strong> Controls rendering order along the Z-axis (depth); requires a positioned element (relative, absolute, fixed, or sticky)</li>
+                        <li><strong>Stacking Context Concept:</strong> Sub-layering folders; elements can only stack relative to siblings within the same parent stacking context</li>
+                        <li><strong>Stacking Context Triggers:</strong> Positioned elements with z-index != auto, opacity &lt; 1, transform != none, filter, or will-change</li>
+                        <li><strong>Parent Stacking Trap:</strong> A child with z-index: 9999 cannot escape a parent stacking context bounded below sibling elements</li>
+                        <li><strong>Debugging Sequence:</strong> Check position property &rarr; verify parent stacking contexts &rarr; inspect opacity/transform triggers &rarr; evaluate DOM source order</li>
+                    </ul>
+                </li>
+                <li>CSS Floats &amp; Clearing Mechanics
+                    <ul class="sub-topics-list">
+                        <li><strong>Floats (float: left / right):</strong> Takes elements out of normal flow horizontally, allowing inline content (like paragraph text) to wrap around images</li>
+                        <li><strong>Parent Height Collapse:</strong> Parent containers collapsing to zero height when all child elements are floated</li>
+                        <li><strong>Clear Property:</strong> clear: left, clear: right, and clear: both preventing elements from wrapping around floated siblings</li>
+                        <li><strong>The Clearfix Pattern:</strong> Modern pseudo-element clearfix (.clearfix::after { content: ""; display: block; clear: both; }) restoring parent height</li>
+                        <li><strong>Floats vs. Modern Layouts:</strong> Comparing legacy float-based column hacks with modern CSS Flexbox and CSS Grid</li>
+                    </ul>
+                </li>
+            </ul>
+
+            <!-- Example Code Section -->
+            <h2 class="section-title">Example Code:</h2>
+            <div class="code-box">
+                <pre>&lt;!-- Relative Parent with Absolute Positioned Badge --&gt;
+&lt;div style="position: relative; width: 220px; padding: 18px; border: 2px solid #0f766e; border-radius: 8px; background: #ffffff;"&gt;
+    &lt;span style="position: absolute; top: -10px; right: -10px; background-color: #0f766e; color: #ffffff; padding: 4px 10px; border-radius: 12px; font-size: 11px; font-weight: bold; z-index: 10;"&gt;
+        NEW
+    &lt;/span&gt;
+    &lt;h4 style="margin: 0; color: #0f766e;"&gt;Positioning Card&lt;/h4&gt;
+    &lt;p style="font-size: 13px; color: #475569; margin-top: 6px;"&gt;
+        Parent has position: relative; Badge has position: absolute.
+    &lt;/p&gt;
+&lt;/div&gt;</pre>
+            </div>
+
+            <!-- Output Section -->
+            <h2 class="section-title">Output:</h2>
+            <div class="output-box" style="display: flex; justify-content: center; padding: 25px 15px;">
+                <div style="position: relative; width: 260px; padding: 20px; border: 2px solid #0f766e; border-radius: 8px; background-color: #f0fdfa; box-shadow: 0 4px 12px rgba(15, 118, 110, 0.1);">
+                    <span style="position: absolute; top: -12px; right: -10px; background: linear-gradient(135deg, #0f766e, #0d9488); color: #ffffff; padding: 3px 10px; border-radius: 12px; font-size: 11px; font-weight: 700; box-shadow: 0 2px 5px rgba(0,0,0,0.15);">
+                        NEW
+                    </span>
+                    <strong style="color: #0f766e; font-size: 15px; display: block;">Positioning Card</strong>
+                    <p style="font-size: 13px; color: #334155; margin-top: 6px; line-height: 1.5;">
+                        Containing block demonstrated: The badge is anchored accurately to the card's top-right corner.
+                    </p>
+                </div>
+            </div>
+
+            <hr class="divider">
+
+            <!-- Bottom Navigation -->
+            <footer class="nav-footer">
+                <a href="index.html">Home</a> | <a href="lecture6.html">Previous Lecture</a> | <a href="lecture8.html">Next Lecture</a>
+            </footer>
+        </main>
+    </div>
+
+</body>
+</html>

@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lecture 3: HTML & HTML5 Fundamentals & Content</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <div class="container">
+        <main class="content-area">
+            <!-- Header Section -->
+            <h1 class="lecture-title">Lecture 3: HTML &amp; HTML5 Fundamentals &amp; Content</h1>
+            <p class="lecture-subtitle">Document Skeleton, DOM Tree, Text Formatting, Media &amp; Semantic Tables</p>
+            <hr class="divider">
+
+            <!-- Summary Section -->
+            <h2 class="section-title">Summary</h2>
+            <p class="section-text">
+                This lecture introduces the core structural foundation of web pages using HyperText Markup Language (HTML). Students master standard document skeletons, DOCTYPE declarations, and the hierarchical Document Object Model (DOM) tree. The lecture breaks down syntactic rules, void versus container tags, nesting requirements, and strict W3C validation. Furthermore, it comprehensively details core content elements—headings, rich text formatting, relative/absolute hyperlinks, media embedding (images, audio, video), list structures, and semantic data tables utilizing row and column spans.
+            </p>
+
+            <!-- Topics Covered Section -->
+            <h2 class="section-title">Topics Covered:</h2>
+            <ul class="topics-list">
+                <li>HTML Fundamentals &amp; Document Structure
+                    <ul class="sub-topics-list">
+                        <li><strong>Markup Role:</strong> Giving semantic meaning, structure, and hierarchy to raw text</li>
+                        <li><strong>Document Skeleton:</strong> &lt;!DOCTYPE html&gt;, &lt;html&gt;, &lt;head&gt; (metadata, charset, viewport, title), and &lt;body&gt;</li>
+                        <li><strong>DOM Tree Representation:</strong> Nodes, element nesting, parent-child-sibling node hierarchy</li>
+                    </ul>
+                </li>
+                <li>Syntax, Conventions &amp; Validation
+                    <ul class="sub-topics-list">
+                        <li><strong>Elements vs. Tags vs. Attributes:</strong> Opening tag, attribute name-value pairs, element content, and closing tag</li>
+                        <li><strong>Void vs. Container Elements:</strong> Container tags (&lt;p&gt;,&lt;div&gt;) vs. self-closing void elements (&lt;img&gt;,&lt;br&gt;,&lt;hr&gt;,&lt;input&gt;)</li>
+                        <li><strong>Nesting &amp; Standards:</strong> Proper nesting order and W3C HTML markup validation standards</li>
+                    </ul>
+                </li>
+                <li>Core Content &amp; Formatting Elements
+                    <ul class="sub-topics-list">
+                        <li><strong>Headings &amp; Paragraphs:</strong> Semantic heading scale (&lt;h1&gt; through &lt;h6&gt;) and text blocks (&lt;p&gt;)</li>
+                        <li><strong>Text Formatting:</strong> &lt;strong&gt; (importance), &lt;em&gt; (emphasis), &lt;mark&gt; (highlight), &lt;del&gt; (deleted), &lt;ins&gt; (inserted), &lt;br&gt;, and &lt;hr&gt;</li>
+                        <li><strong>Hyperlinks (&lt;a&gt;):</strong> Absolute URLs, relative paths, target attributes (_blank), and fragment identifiers (#id)</li>
+                    </ul>
+                </li>
+                <li>Lists &amp; Multimedia Elements
+                    <ul class="sub-topics-list">
+                        <li><strong>Lists:</strong> Ordered lists (&lt;ol&gt;), unordered bulleted lists (&lt;ul&gt;), and description lists (&lt;dl&gt;, &lt;dt&gt;, &lt;dd&gt;)</li>
+                        <li><strong>Multimedia:</strong> Accessible images (&lt;img&gt; with required alt text), native audio playback (&lt;audio controls&gt;), and embedded video (&lt;video controls&gt;)</li>
+                    </ul>
+                </li>
+                <li>Tables &amp; Semantic Tabular Data
+                    <ul class="sub-topics-list">
+                        <li><strong>Table Tags:</strong> &lt;table&gt;, table rows (&lt;tr&gt;), table headers (&lt;th&gt;), table data cells (&lt;td&gt;)</li>
+                        <li><strong>Semantic Sections:</strong> &lt;caption&gt;, &lt;thead&gt;, &lt;tbody&gt;, and &lt;tfoot&gt;</li>
+                        <li><strong>Cell Merging:</strong> Horizontal span (colspan) and vertical span (rowspan)</li>
+                        <li><strong>Page Flow Notice:</strong> Distinguishing block vs. inline elements, and why table layouts are obsolete for page skeletons</li>
+                    </ul>
+                </li>
+            </ul>
+
+            <!-- Example Code Section -->
+            <h2 class="section-title">Example Code:</h2>
+            <div class="code-box">
+                <pre>&lt;!-- Semantic Data Table with Colspan --&gt;
+&lt;table border="1" cellpadding="8" style="border-collapse: collapse;"&gt;
+    &lt;caption&gt;Student Grade Record&lt;/caption&gt;
+    &lt;thead&gt;
+        &lt;tr&gt;
+            &lt;th&gt;Student Name&lt;/th&gt;
+            &lt;th&gt;Course Code&lt;/th&gt;
+            &lt;th&gt;Grade&lt;/th&gt;
+        &lt;/tr&gt;
+    &lt;/thead&gt;
+    &lt;tbody&gt;
+        &lt;tr&gt;
+            &lt;td&gt;Muhammad Nouman&lt;/td&gt;
+            &lt;td&gt;CSC336 Web Tech&lt;/td&gt;
+            &lt;td&gt;&lt;strong&gt;A&lt;/strong&gt;&lt;/td&gt;
+        &lt;/tr&gt;
+    &lt;/tbody&gt;
+    &lt;tfoot&gt;
+        &lt;tr&gt;
+            &lt;td colspan="2"&gt;&lt;em&gt;Status:&lt;/em&gt;&lt;/td&gt;
+            &lt;td&gt;&lt;mark&gt;Active&lt;/mark&gt;&lt;/td&gt;
+        &lt;/tr&gt;
+    &lt;/tfoot&gt;
+&lt;/table&gt;</pre>
+            </div>
+
+            <!-- Output Section -->
+            <h2 class="section-title">Output:</h2>
+            <div class="output-box">
+                <table style="width: 100%; border-collapse: collapse; font-size: 13.5px; border: 1px solid #d1e2e0;">
+                    <caption style="font-weight: 700; color: #0f766e; margin-bottom: 6px;">Student Grade Record</caption>
+                    <thead>
+                        <tr style="background-color: #0f766e; color: #ffffff;">
+                            <th style="padding: 8px 12px; text-align: left; border: 1px solid #0d635c;">Student Name</th>
+                            <th style="padding: 8px 12px; text-align: left; border: 1px solid #0d635c;">Course Code</th>
+                            <th style="padding: 8px 12px; text-align: center; border: 1px solid #0d635c;">Grade</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr style="background-color: #ffffff;">
+                            <td style="padding: 8px 12px; border: 1px solid #e2e8f0;">Muhammad Nouman</td>
+                            <td style="padding: 8px 12px; border: 1px solid #e2e8f0;">CSC336 Web Tech</td>
+                            <td style="padding: 8px 12px; text-align: center; border: 1px solid #e2e8f0;"><strong style="color: #0f766e;">A</strong></td>
+                        </tr>
+                    </tbody>
+                    <tfoot>
+                        <tr style="background-color: #f7faf9;">
+                            <td colspan="2" style="padding: 8px 12px; border: 1px solid #e2e8f0;"><em>Status:</em></td>
+                            <td style="padding: 8px 12px; text-align: center; border: 1px solid #e2e8f0;"><mark style="background-color: #ccfbf1; color: #0f766e; padding: 2px 6px; border-radius: 3px;">Active</mark></td>
+                        </tr>
+                    </tfoot>
+                </table>
+            </div>
+
+            <hr class="divider">
+
+            <!-- Bottom Navigation -->
+            <footer class="nav-footer">
+                <a href="index.html">Home</a> | <a href="lecture2.html">Previous Lecture</a> | <a href="lecture4.html">Next Lecture</a>
+            </footer>
+        </main>
+    </div>
+
+</body>
+</html>

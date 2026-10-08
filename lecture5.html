@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lecture 5: CSS Fundamentals, Selectors & Cascade</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <div class="container">
+        <main class="content-area">
+            <!-- Header Section -->
+            <h1 class="lecture-title">Lecture 5: CSS Fundamentals, Selectors &amp; Cascade</h1>
+            <p class="lecture-subtitle">Syntax, Implementation, Combinators, Specificity &amp; Typography</p>
+            <hr class="divider">
+
+            <!-- Summary Section -->
+            <h2 class="section-title">Summary</h2>
+            <p class="section-text">
+                This lecture explores Cascading Style Sheets (CSS), the definitive standard for separating document presentation from structural markup. Students investigate CSS rule syntax, implementation methodologies (inline, internal, and external stylesheets), and diverse selector types—ranging from simple class and ID selectors to advanced combinators (child, sibling) and universal resets. The lecture thoroughly unpacks interactive pseudo-classes, generated content via pseudo-elements, the exact mathematical algorithm of Cascade Specificity, property inheritance, and comprehensive typography and color modeling (HEX, RGB, RGBA).
+            </p>
+
+            <!-- Topics Covered Section -->
+            <h2 class="section-title">Topics Covered:</h2>
+            <ul class="topics-list">
+                <li>CSS Fundamentals &amp; Implementation Methods
+                    <ul class="sub-topics-list">
+                        <li><strong>Presentation vs. Content:</strong> Decoupling design aesthetics from HTML semantics</li>
+                        <li><strong>Rule Anatomy:</strong> Selector, declaration block, CSS properties, and values</li>
+                        <li><strong>Three Inclusion Ways:</strong> Inline styles (style=""), Internal (&lt;style&gt; in head), and External stylesheets (&lt;link rel="stylesheet"&gt;)</li>
+                    </ul>
+                </li>
+                <li>CSS Selectors &amp; Combinators
+                    <ul class="sub-topics-list">
+                        <li><strong>Basic Selectors:</strong> Type/Element, Class (.btn), ID (#main), and Attribute selectors ([type="email"])</li>
+                        <li><strong>Grouping &amp; Universal:</strong> Grouping selectors (h1, h2, h3) and Universal reset selector (*)</li>
+                        <li><strong>Combinator Selectors:</strong> Descendant (div p), Child / direct descendant (div &gt; p), Adjacent sibling (h2 + p), and General sibling (h2 ~ p)</li>
+                    </ul>
+                </li>
+                <li>Pseudo-classes &amp; Pseudo-elements
+                    <ul class="sub-topics-list">
+                        <li><strong>Interactive Pseudo-classes:</strong> :hover, :focus, :active, :visited, and :disabled</li>
+                        <li><strong>Structural Pseudo-classes:</strong> :first-child, :last-child, :nth-child(even|odd|An+B), :first-of-type, and :only-of-type</li>
+                        <li><strong>Pseudo-elements:</strong> ::before, ::after (with content property), ::first-letter, ::first-line, ::selection, and ::marker</li>
+                    </ul>
+                </li>
+                <li>The Cascade, Specificity &amp; Inheritance
+                    <ul class="sub-topics-list">
+                        <li><strong>The Cascade Order:</strong> Importance (!important) &gt; Specificity &gt; Source order (last rule wins)</li>
+                        <li><strong>Specificity Weight:</strong> Inline (1,0,0,0) &gt; ID (0,1,0,0) &gt; Class/Attribute/Pseudo-class (0,0,1,0) &gt; Element/Pseudo-element (0,0,0,1)</li>
+                        <li><strong>Inheritance:</strong> Inherited properties (color, font-family) vs. non-inherited (margins, borders), and control keywords (inherit, initial, unset, revert)</li>
+                    </ul>
+                </li>
+                <li>Typography &amp; Visual Styling
+                    <ul class="sub-topics-list">
+                        <li><strong>Color Formats:</strong> Named colors, HEX (#0f766e), RGB (rgb(15, 118, 110)), and RGBA with alpha transparency channel</li>
+                        <li><strong>Font Stacks &amp; Families:</strong> Serif, Sans-Serif, Monospace, generic fallback stacks, font-size, font-weight, and font-style</li>
+                        <li><strong>Text &amp; Background Properties:</strong> text-align, text-decoration, text-transform, line-height, letter-spacing, and background shorthand</li>
+                    </ul>
+                </li>
+            </ul>
+
+            <!-- Example Code Section -->
+            <h2 class="section-title">Example Code:</h2>
+            <div class="code-box">
+                <pre>&lt;!-- CSS Rule, Specificity &amp; Pseudo-classes --&gt;
+&lt;style&gt;
+  /* Class Selector with Interactive Pseudo-Class */
+  .badge-demo {
+    background-color: #0f766e;
+    color: #ffffff;
+    padding: 6px 14px;
+    border-radius: 20px;
+    font-size: 13px;
+    font-weight: 600;
+    display: inline-block;
+    transition: transform 0.2s, background-color 0.2s;
+  }
+  .badge-demo:hover {
+    background-color: #115e59;
+    transform: translateY(-2px);
+  }
+&lt;/style&gt;
+
+&lt;span class="badge-demo"&gt;Hover Me: Specificity (0,0,1,0)&lt;/span&gt;</pre>
+            </div>
+
+            <!-- Output Section -->
+            <h2 class="section-title">Output:</h2>
+            <div class="output-box" style="text-align: center;">
+                <span class="badge-demo" style="background-color: #0f766e; color: #ffffff; padding: 8px 16px; border-radius: 20px; font-size: 13.5px; font-weight: 600; display: inline-block; cursor: pointer;">
+                    Hover Me: Specificity (0,0,1,0)
+                </span>
+                <p style="font-size: 13px; color: #64748b; margin-top: 10px;">
+                    Rendered with clean typography, RGBA transparency, and interactive <code>:hover</code> pseudo-class transition.
+                </p>
+            </div>
+
+            <hr class="divider">
+
+            <!-- Bottom Navigation -->
+            <footer class="nav-footer">
+                <a href="index.html">Home</a> | <a href="lecture4.html">Previous Lecture</a> | <a href="lecture6.html">Next Lecture</a>
+            </footer>
+        </main>
+    </div>
+
+</body>
+</html>
